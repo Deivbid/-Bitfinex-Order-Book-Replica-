@@ -15,12 +15,16 @@ This project prioritized understanding the Bitfinex API and structuring the app 
 - **Precision Control** 🔍: Conceptualized feature to adjust price precision with simple `+` and `-` buttons, allowing for a customized view of the order book data.
 - **Connect/Disconnect** 🔌: Planned functionality to manually manage the WebSocket connection, providing more control over data streaming and optimizing resource usage.
 
+## UI Screenshot
+
+![Bitfinex Order Book Replica UI](https://i.imgur.com/SlljXnQ.png)
+
 ## Setup & Run
 
 Clone the project, install dependencies, and start exploring the order book data:
 
 ```bash
-git clone https://your-repo-url.git
+git clone https://github.com/Deivbid/-Bitfinex-Order-Book-Replica-.git
 cd your-repo-directory
 bun install
 bun start

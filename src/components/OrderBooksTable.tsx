@@ -15,10 +15,7 @@ interface OrderBookTableProps {
   isBid?: boolean;
 }
 
-export const OrderBookTable: React.FC<OrderBookTableProps> = ({
-  entries,
-  isBid,
-}) => {
+export const OrderBookTable: React.FC<OrderBookTableProps> = ({ entries }) => {
   return (
     <div className={`flex flex-col rounded-lg border`}>
       <Table>
