@@ -6,8 +6,22 @@ import {
   TableCell,
   Table,
 } from "@/components/ui/table";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { selectBids, selectAsks } from "./features/orderBook/orderBookSlice";
+import { startWebSocketConnection } from "./features/orderBook/orderBookThunks";
+import { AppDispatch } from "./store/store";
 
 function App() {
+  const dispatch = useDispatch<AppDispatch>();
+
+  useEffect(() => {
+    dispatch(startWebSocketConnection());
+  }, [dispatch]);
+
+  const bids = useSelector(selectBids).slice(0, 15);
+  const asks = useSelector(selectAsks).slice(0, 15);
+
   return (
     <div className="dark min-h-screen w-full py-12 flex justify-center items-center">
       <div className="relative w-full max-w-6xl mx-auto text-white">
@@ -23,42 +37,14 @@ function App() {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                <TableRow>
-                  <TableCell>0.000001</TableCell>
-                  <TableCell>1000.000000</TableCell>
-                  <TableCell>1000.000000</TableCell>
-                  <TableCell className="text-right">1.000000</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell>0.000002</TableCell>
-                  <TableCell>2000.000000</TableCell>
-                  <TableCell>1000.000000</TableCell>
-                  <TableCell className="text-right">2.000000</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell>0.000003</TableCell>
-                  <TableCell>3000.000000</TableCell>
-                  <TableCell>1000.000000</TableCell>
-                  <TableCell className="text-right">3.000000</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell>0.000004</TableCell>
-                  <TableCell>4000.000000</TableCell>
-                  <TableCell>1000.000000</TableCell>
-                  <TableCell className="text-right">4.000000</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell>0.000005</TableCell>
-                  <TableCell>5000.000000</TableCell>
-                  <TableCell>1000.000000</TableCell>
-                  <TableCell className="text-right">5.000000</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell>0.000005</TableCell>
-                  <TableCell>5000.000000</TableCell>
-                  <TableCell>1000.000000</TableCell>
-                  <TableCell className="text-right">5.000000</TableCell>
-                </TableRow>
+                {bids.map((bid, index) => (
+                  <TableRow key={index}>
+                    <TableCell>{bid.count}</TableCell>
+                    <TableCell>{bid.amount}</TableCell>
+                    <TableCell>{bid.total}</TableCell>
+                    <TableCell className="text-right">{bid.price}</TableCell>
+                  </TableRow>
+                ))}
               </TableBody>
             </Table>
           </div>
@@ -73,42 +59,14 @@ function App() {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                <TableRow>
-                  <TableCell>0.000001</TableCell>
-                  <TableCell>1000.000000</TableCell>
-                  <TableCell>1000.000000</TableCell>
-                  <TableCell className="text-right">1.000000</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell>0.000002</TableCell>
-                  <TableCell>2000.000000</TableCell>
-                  <TableCell>1000.000000</TableCell>
-                  <TableCell className="text-right">2.000000</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell>0.000003</TableCell>
-                  <TableCell>3000.000000</TableCell>
-                  <TableCell>1000.000000</TableCell>
-                  <TableCell className="text-right">3.000000</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell>0.000004</TableCell>
-                  <TableCell>4000.000000</TableCell>
-                  <TableCell>1000.000000</TableCell>
-                  <TableCell className="text-right">4.000000</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell>0.000005</TableCell>
-                  <TableCell>5000.000000</TableCell>
-                  <TableCell>1000.000000</TableCell>
-                  <TableCell className="text-right">5.000000</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell>0.000001</TableCell>
-                  <TableCell>1000.000000</TableCell>
-                  <TableCell>1000.000000</TableCell>
-                  <TableCell className="text-right">1.000000</TableCell>
-                </TableRow>
+                {asks.map((ask, index) => (
+                  <TableRow key={index}>
+                    <TableCell>{ask.count}</TableCell>
+                    <TableCell>{ask.amount}</TableCell>
+                    <TableCell>{ask.total}</TableCell>
+                    <TableCell className="text-right">{ask.price}</TableCell>
+                  </TableRow>
+                ))}
               </TableBody>
             </Table>
           </div>
