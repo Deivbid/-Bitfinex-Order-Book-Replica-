@@ -4,6 +4,17 @@ Welcome to the ultra-cool and supercharged 🚀 project where I replicate the Bi
 
 This project prioritized understanding the Bitfinex API and structuring the app efficiently 🛠️. While some features like precision control and connect/disconnect functionality were conceptualized, the focus was on ensuring a solid foundation and real-time data accuracy 🎯. More time was invested in grasping the Bitfinex API intricacies and planning a scalable application architecture, laying the groundwork for future enhancements.
 
+## 🛠 Technologies Used
+
+This project leverages some of the coolest tech stacks out there to bring the Bitfinex Order Book to life:
+
+- **React** ⚛️: A JavaScript library for building user interfaces with dynamic, interactive UIs in web applications.
+- **Redux Toolkit** 🧰: The official, opinionated, batteries-included toolset for efficient Redux development.
+- **WebSockets** 🌐: Enables real-time, bidirectional and event-based communication between web clients and servers.
+- **TypeScript** 📜: A superset of JavaScript that adds static types to the language, enhancing code quality and understandability.
+- **Vite** ⚡: A modern, lightning-fast build tool that significantly improves the development experience.
+- **shadcn** 🎨: A sleek UI component library that gives our application its stylish look and feel.
+
 ## Features
 
 - **Real-Time Data** 🚀: Stay updated with the latest market movements without manual refreshes.
