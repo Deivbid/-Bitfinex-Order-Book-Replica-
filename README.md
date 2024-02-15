@@ -1,30 +1,27 @@
-# React + TypeScript + Vite
+# 📈 Bitfinex Order Book Replica 📉
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the ultra-cool and supercharged 🚀 project where I replicate the Bitfinex Order Book widget! Dive into the world of cryptocurrency with real-time data streaming 🌊, showing the top bids and asks without needing to hit refresh.
 
-Currently, two official plugins are available:
+This project prioritized understanding the Bitfinex API and structuring the app efficiently 🛠️. While some features like precision control and connect/disconnect functionality were conceptualized, the focus was on ensuring a solid foundation and real-time data accuracy 🎯. More time was invested in grasping the Bitfinex API intricacies and planning a scalable application architecture, laying the groundwork for future enhancements.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Real-Time Data** 🚀: Stay updated with the latest market movements without manual refreshes.
+- **Top Orders Focus** 🎯: Display only the top 15 bids and asks, ensuring the most relevant data is front and center.
+- **Slick UI** 💅: Thanks to `shadcn`, the interface is not just functional but also easy on the eyes.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Planned Features
 
-- Configure the top-level `parserOptions` property like this:
+- **Precision Control** 🔍: Conceptualized feature to adjust price precision with simple `+` and `-` buttons, allowing for a customized view of the order book data.
+- **Connect/Disconnect** 🔌: Planned functionality to manually manage the WebSocket connection, providing more control over data streaming and optimizing resource usage.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## Setup & Run
+
+Clone the project, install dependencies, and start exploring the order book data:
+
+```bash
+git clone https://your-repo-url.git
+cd your-repo-directory
+bun install
+bun start
 ```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
